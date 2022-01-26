@@ -1,10 +1,9 @@
-name: Docker Image CI
+name: Deploy to Docker Hub
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    types: [closed]
+    branches: [master]
 
 jobs:
 
@@ -33,3 +32,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/flutter-workspace:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/flutter-workspace:latest
+          cache-to: type=inline
