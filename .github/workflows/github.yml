@@ -3,10 +3,12 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Create and publish a Docker image
+name: Create a Docker image
 
 on:
   push:
+    branches: ['stage']
+  pull_request:
     branches: ['stage']
 
 env:

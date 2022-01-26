@@ -1,8 +1,6 @@
-name: Docker Image CI
+name: Deploy to Docker Hub
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
